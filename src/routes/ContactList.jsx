@@ -12,11 +12,13 @@ export async function loader() {
 }
 
 export function ContactList(){
-  const { contacts } = useLoaderData();
+  let { contacts } = useLoaderData();
+  if(contacts === undefined) contacts = '';
+
   return (
     <>
-      <h1>React Router Contacts</h1>
       <aside style={{width: '100px', display: "flex", flexDirection: 'column', backgroundColor: 'salmon'}}>
+        <h1>React Router Contacts</h1>
         {
           contacts.length ? (
           <ul>
