@@ -5,7 +5,7 @@ import App from './routes/App';
 import ErrorPage from './error-page';
 import Login from './routes/Login';
 import Register from './routes/Register';
-import {ContactList, loader as ContactListLoader} from './routes/ContactList';
+import {ContactList, loader as ContactListLoader, action as ContactListAction} from './routes/ContactList';
 import Contact from "./components/Contact";
 import LoginLine from './components/LoginLine';
 import LoginGoogle from './components/LoginGoogle';
@@ -13,7 +13,7 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
+  // Route,
 } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -44,6 +44,7 @@ const router = createBrowserRouter([
     path: "contacts",
     element: <ContactList />,
     loader: ContactListLoader,
+    action: ContactListAction,
     children: [
       {
         path: ":contactId",
@@ -51,7 +52,10 @@ const router = createBrowserRouter([
       },
     ]
   },
-]);
+], 
+{
+  basename: "/parkingkit-beta",
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
