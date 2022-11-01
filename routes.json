@@ -1,1 +1,5 @@
-{}
+{
+  "/": "/parking",
+  "/availability": "/parking/availability",
+  "/info": "/parking/info"
+}
