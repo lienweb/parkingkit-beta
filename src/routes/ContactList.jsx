@@ -1,15 +1,12 @@
-import { Outlet, Link, useLoaderData } from "react-router-dom"
-import { getContacts } from "../apis/contacts";
+import { Outlet, Link, Form, useLoaderData } from "react-router-dom"
+import { getContacts, createContact } from "../apis/contacts";
 // import styled from "styled-components";
 
 // const Aside = styled.aside`
 //   grid-area: 40%;
 // `
 
-export async function loader() {
-  const contacts = await getContacts();
-  return { contacts };
-}
+
 
 export function ContactList(){
   let { contacts } = useLoaderData();
@@ -19,6 +16,10 @@ export function ContactList(){
     <>
       <aside style={{width: '100px', display: "flex", flexDirection: 'column', backgroundColor: 'salmon'}}>
         <h1>React Router Contacts</h1>
+        <Form method="post" style={{display: 'flex'}}>
+          <input type="text" placeholder="enter contact name" />
+          <button type="submit">New</button>
+        </Form>
         {
           contacts.length ? (
           <ul>
@@ -54,3 +55,12 @@ export function ContactList(){
   )
 }
 
+// data manipulation
+export async function loader() {
+  const contacts = await getContacts();
+  return { contacts };
+}
+
+export async function action() {
+  await createContact();
+}
