@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { useMap } from 'react-leaflet/hooks';
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import icon from '../assets/marker.png'
 
 
-function LocateButton({center}) {
+function LocateButton({center, icon}) {
   const map = useMap()
   const [position, setPosition] = useState(null)
 
@@ -55,7 +54,7 @@ function LocateButton({center}) {
     }
   }, [])
 
-  // console.log(`painting ui.....:position[${position}]`)
+  console.log(`painting ui.....:position[${position}]`)
   return position === null ? null
     : (
       <Marker position={position} icon={icon}>
