@@ -3,9 +3,7 @@ import '../stylesheets/stylesheet.css'
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
-// import { useMap } from 'react-leaflet/hooks'
-import LocationMarker from './LocationMarker';
-import Button from './Button'
+import LocateButton from './LocateButton'
 
 
 export default function Map() {
@@ -32,7 +30,7 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position="bottomright" />
-      <Button />
+      <LocateButton center={center} />
       {/* 停車場位置 */}
       <Marker position={[center.lat, center.lng]} icon={markerIcon}>
         <Popup>
