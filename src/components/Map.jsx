@@ -30,7 +30,7 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position="bottomright" />
-      <LocateButton center={center} icon={markerIcon} />
+      <LocateButton center={center} />
       {/* 停車場位置 */}
       <Marker position={[center.lat, center.lng]} icon={markerIcon}>
         <Popup>
