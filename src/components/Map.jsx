@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import '../stylesheets/stylesheet.css'
 import "leaflet/dist/leaflet.css";
-import L, { marker } from 'leaflet'
+import L, { marker, LeafletMouseEvent } from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
 import { useMap } from 'react-leaflet/hooks'
+
+
 
 function LocationMarker({ center, icon }) {
   const [position, setPosition] = useState(null)
@@ -72,6 +74,7 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position="bottomright" />
+      <button type="button">test</button>
       {/* 停車場位置 */}
       <Marker position={[center.lat, center.lng]} icon={markerIcon}>
         <Popup>
