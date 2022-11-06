@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import parkingLotApi from '../apis/parkingLot'
+// import parkingLotApi from '../apis/parkingLot'
 import L from 'leaflet'
 import { apiHelper } from '../utils/helpers'
 import ParkingMarker from './ParkingMarker'
@@ -46,12 +46,11 @@ function ParkingMarkers() {
 
     // convert coordinates
     const { tw97x, tw97y } = coordinate
-    const [lng, lat] = proj4("EPSG:3826", 'EPSG:4326', [parseFloat(tw97x), parseFloat(tw97y)])
+    const [lng, lat] = proj4('EPSG:3826', 'EPSG:4326', [parseFloat(tw97x), parseFloat(tw97y)])
 
     return { lat: lat.toFixed(6), lng:lng.toFixed(6)}
   })
 
-  console.log(infoArr)
 
   return (
     <>
