@@ -3,6 +3,7 @@ import parkingLotApi from '../apis/parkingLot'
 import L from 'leaflet'
 import { apiHelper } from '../utils/helpers'
 import ParkingMarker from './ParkingMarker'
+import proj4 from 'proj4'
 
 // pass api info into marker
 function ParkingMarkers() {
@@ -10,11 +11,9 @@ function ParkingMarkers() {
   const markerIcon = new L.Icon({
     iconUrl: require('../assets/marker.png'),
     iconSize: [24, 36],
-    iconAnchor: [12, 36], //align when zoom in out
+    iconAnchor: [12, 36],
     popupAnchor: [0, -46]
   })
-
-  // console.log(parkingLotApi)
 
   // get data from api
   useEffect(() => {
@@ -40,38 +39,46 @@ function ParkingMarkers() {
 
   // use coordinates and place marker
   const infoArr = coordinates.map((coordinate, i) => {
+    proj4.defs([
+      ["EPSG:3826", "+proj=tmerc +lat_0=0 +lon_0=121 +k=0.9999 +x_0=250000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"],
+      ["EPSG:4326", "+proj=longlat +datum=WGS84 +no_defs +type=crs"]
+    ])
+
     // process coordinates
     const coordArray = coordinate.EntranceCoord.EntrancecoordInfo
-    // console.table(`[${i}]${JSON.stringify(array[array.length-1])}`)
-
-    const { Xcod, Ycod } = coordArray[coordArray.length - 1]
-    //console.log(typeof(Xcod)) // string
-    // console.log(`1[${i}][${Xcod}][${Ycod}]`)
+    const { Xcod, Ycod } = coordArray[coordArray.length-1]
+    console.log(`1[${i}][${Xcod}][${Ycod}]`)
     //  console.log(`total processed: [${array.length}]`)
     //TODO: if coord not present, use TWD97 and convert to lat/lng
 
-    const { Xcod: lat, Ycod: lng } =
-      { Xcod: parseFloat(Xcod), Ycod: parseFloat(Ycod) }
-    // console.log(`[${i}][${lat}][${lng}]`)
+    const { tw97x, tw97y } = coordinate
+    // console.log(`2[${i}][${tw97x}][${tw97y}]`)
+    const [lng, lat] = proj4("EPSG:3826", 'EPSG:4326', [parseFloat(tw97x), parseFloat(tw97y)]);
+
+    console.log(`3[${i}][${lat.toFixed(6)}][${lng.toFixed(6) }]---`)
+
+    const position =  { lat: lat.toFixed(6), lng:lng.toFixed(6)}
+
+    return 
 
     // process description
 
-    return { lat, lng }
+    // return { lat, lng }
   })
 
   // console.log(infoArr)
 
-  return (
-    <>
-      {
-        infoArr.map((info, i)=>(
-          <ParkingMarker key={i}
-           position={{lat:info.lat, lng:info.lng}}
-          description="" />
-        ))
-      }
-    </>
-  )
+  // return (
+  //   <>
+  //     {
+  //       infoArr.map((info, i) => (
+  //         <ParkingMarker key={i}
+  //           position={{ lat: info.lat, lng: info.lng }}
+  //           description="" />
+  //       ))
+  //     }
+  //   </>
+  // )
 
 }
 
