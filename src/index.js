@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './routes/App';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  // Route,
+} from "react-router-dom";
 import ErrorPage from './error-page';
 import Login from './routes/Login';
 import Register from './routes/Register';
@@ -12,13 +16,7 @@ import LoginGoogle from './components/LoginGoogle';
 import Map from './components/Map'
 import MapDemo from './components/MapDemo'
 import CurrentPos from './components/CurrentPos';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  // Route,
-} from "react-router-dom";
 
 const router = createBrowserRouter([
   {
