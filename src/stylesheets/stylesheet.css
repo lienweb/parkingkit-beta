@@ -1,8 +1,18 @@
 .map__container{
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 
+/* 
+.nav__menu{
+  background-color: #fff;
+} */
 
+.nav__sidepanel{
+  /* width: 10vw; */
+  height: 10vh;
+}
 
-
+.leaflet-geosearch-button form.open input{
+  box-shadow: none;
+}

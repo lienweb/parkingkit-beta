@@ -1,15 +1,30 @@
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
 function Menu() {
   return (
     <Navbar key='false' bg="light" expand='true' className="nav__sidepanel">
       <Container fluid>
-        <Navbar.Toggle aria-controls='offcanvasNavbar-expand-false' />
+        <div className='d-flex'>
+          <Navbar.Toggle aria-controls='offcanvasNavbar-expand-false' />
+          <Form className="d-flex">
+            <ButtonGroup>
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+              <Button variant="outline-secondary">Search</Button>
+            </ButtonGroup>
+          </Form>
+        </div>
         <Navbar.Brand href="#">ParkingKit-beta</Navbar.Brand>
         <Navbar.Offcanvas
           id='offcanvasNavbar-expand-false'
