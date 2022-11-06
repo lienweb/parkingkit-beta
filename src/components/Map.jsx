@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
 import LocateButton from './LocateButton'
+import Menu from './Menu'
 
 
 export default function Map() {
@@ -19,26 +20,26 @@ export default function Map() {
   })
 
   return (
-    <MapContainer
-      center={[center.lat, center.lng]}
-      zoom={zoomLevel}
-      scrollWheelZoom={true}
-      zomControl={false}
-      className="map__container" >
-      <TileLayer
-        attribution='&copy; <a href="https://www. openstreetmap.org/copyright">OpenStreetMap</ a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <ZoomControl position="bottomright" />
-      <LocateButton center={center} />
-      {/* 停車場位置 */}
-      <Marker position={[center.lat, center.lng]} icon={markerIcon}>
-        <Popup>
-          <b>test</b>
-        </Popup>
-      </Marker>
-      {/* 自動取得使用者位置 */}
-      {/* <LocationMarker center={center} icon={markerIcon} /> */}
-    </MapContainer>
+    <>
+      <Menu />
+      <MapContainer
+        center={[center.lat, center.lng]}
+        zoom={zoomLevel}
+        scrollWheelZoom={true}
+        zoomControl={false}
+        className="map__container" >
+        <TileLayer
+          attribution='&copy; <a href="https://www. openstreetmap.org/copyright">OpenStreetMap Contributors</ a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <ZoomControl position="bottomright" />
+        <LocateButton center={center} />
+        <Marker position={[center.lat, center.lng]} icon={markerIcon}>
+          <Popup>
+            <b>test</b>
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </>
   )
 }

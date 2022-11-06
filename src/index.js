@@ -12,6 +12,7 @@ import LoginGoogle from './components/LoginGoogle';
 import Map from './components/Map'
 import MapDemo from './components/MapDemo'
 import CurrentPos from './components/CurrentPos';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,

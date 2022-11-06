@@ -2,6 +2,7 @@
   width: 100%;
   text-align: center;
   /* color: steelblue; */
+  overflow: scroll;
 }
 
 .App-logo {
@@ -145,7 +146,6 @@ form[action$="destroy"] button {
 }
 
 #root {
-  display: flex;
   height: 100%;
   width: 100%;
 }
