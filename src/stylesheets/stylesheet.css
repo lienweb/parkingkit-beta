@@ -13,6 +13,14 @@
   height: 10vh;
 }
 
+.btn-wrapper{
+  border-radius: 5px;
+}
+
 .leaflet-geosearch-button form.open input{
   box-shadow: none;
+}
+
+.container-fluid.popup__container{
+  padding: 0;
 }

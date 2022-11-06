@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { BASE_URL } from '../global/constants';
+// import { BASE_URL } from '../global/constants';
 
 const axiosInstance = axios.create({
-  baseURL: BASE_URL
+  baseURL: 'http://localhost:8000',
+  timeout: 1000,
+  // headers: { 'X-Custom-Header': 'foobar' }
 })
 
 // //發請前求先做
