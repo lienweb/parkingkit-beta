@@ -44,41 +44,26 @@ function ParkingMarkers() {
       ["EPSG:4326", "+proj=longlat +datum=WGS84 +no_defs +type=crs"]
     ])
 
-    // process coordinates
-    const coordArray = coordinate.EntranceCoord.EntrancecoordInfo
-    const { Xcod, Ycod } = coordArray[coordArray.length-1]
-    console.log(`1[${i}][${Xcod}][${Ycod}]`)
-    //  console.log(`total processed: [${array.length}]`)
-    //TODO: if coord not present, use TWD97 and convert to lat/lng
-
+    // convert coordinates
     const { tw97x, tw97y } = coordinate
-    // console.log(`2[${i}][${tw97x}][${tw97y}]`)
-    const [lng, lat] = proj4("EPSG:3826", 'EPSG:4326', [parseFloat(tw97x), parseFloat(tw97y)]);
+    const [lng, lat] = proj4("EPSG:3826", 'EPSG:4326', [parseFloat(tw97x), parseFloat(tw97y)])
 
-    console.log(`3[${i}][${lat.toFixed(6)}][${lng.toFixed(6) }]---`)
-
-    const position =  { lat: lat.toFixed(6), lng:lng.toFixed(6)}
-
-    return 
-
-    // process description
-
-    // return { lat, lng }
+    return { lat: lat.toFixed(6), lng:lng.toFixed(6)}
   })
 
-  // console.log(infoArr)
+  console.log(infoArr)
 
-  // return (
-  //   <>
-  //     {
-  //       infoArr.map((info, i) => (
-  //         <ParkingMarker key={i}
-  //           position={{ lat: info.lat, lng: info.lng }}
-  //           description="" />
-  //       ))
-  //     }
-  //   </>
-  // )
+  return (
+    <>
+      {
+        infoArr.map((info, i) => (
+          <ParkingMarker key={i}
+            position={{ lat: info.lat, lng: info.lng }}
+            description="" />
+        ))
+      }
+    </>
+  )
 
 }
 
