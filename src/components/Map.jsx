@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../stylesheets/stylesheet.css'
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
@@ -39,15 +38,10 @@ export default function Map() {
         <LocateButton center={center} />
         <Marker position={[center.lat, center.lng]} icon={markerIcon}>
           <Popup>
-            <b>test</b>
+            <b>當前位置</b>
           </Popup>
         </Marker>
         <ParkingMarkers />
-        {/* <Marker position={[25.03648987, 121.5621068]} icon={markerIcon}>
-          <Popup>
-            <b>府前廣場地下停車場</b>
-          </Popup>
-        </Marker> */}
       </MapContainer>
     </>
   )

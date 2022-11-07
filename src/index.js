@@ -6,6 +6,9 @@ import {
   RouterProvider,
   // Route,
 } from "react-router-dom";
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './stylesheets/stylesheet.css'
 import ErrorPage from './error-page';
 import Login from './routes/Login';
 import Register from './routes/Register';
@@ -17,6 +20,7 @@ import Map from './components/Map'
 import MapDemo from './components/MapDemo'
 import CurrentPos from './components/CurrentPos';
 import reportWebVitals from './reportWebVitals';
+
 
 const router = createBrowserRouter([
   {
