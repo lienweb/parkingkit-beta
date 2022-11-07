@@ -21,10 +21,10 @@ function ParkingMarker({ position, description }) {
           </div>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <h6>xx停車場</h6>
+              <h6>{description.name}</h6>
               <h6>$ 60</h6>
             </div>
-            <Link to="/#" className='btn btn-secondary text-white'>導航</Link>
+            <Link to="/" className='btn btn-secondary text-white'>導航</Link>
           </div>
         </Container>
       </Popup>
