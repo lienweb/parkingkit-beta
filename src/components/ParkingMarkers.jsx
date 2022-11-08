@@ -15,7 +15,7 @@ function ParkingMarkers() {
 
   const fetchInfo = async () => {
     try {
-      const res = await apiHelper.get('/info') //axios automatically create json, emit res.json() & process res code
+      const res = await apiHelper.get('/info.json') //axios automatically create json, emit res.json() & process res code
       setCoordinates(res.data.park)
     } catch (err) {
       if (err.response) {
@@ -32,7 +32,7 @@ function ParkingMarkers() {
 
   const fetchAvailability = async () => {
     try {
-      const res = await apiHelper.get('/availability')
+      const res = await apiHelper.get('/availability.json')
 
       // console.log(`avail:${JSON.stringify(res.data.data.park)}`)
       setAvailability(res.data.data.park)
