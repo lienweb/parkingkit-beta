@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/parkingkit-beta/static/css/main.0df6f194.css",
-    "main.js": "/parkingkit-beta/static/js/main.bc14a05c.js",
+    "main.css": "/parkingkit-beta/static/css/main.3cd1ea2d.css",
+    "main.js": "/parkingkit-beta/static/js/main.af0c5be5.js",
     "static/js/787.59a99761.chunk.js": "/parkingkit-beta/static/js/787.59a99761.chunk.js",
     "static/media/logo.svg": "/parkingkit-beta/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/parkingkit-beta/index.html",
-    "main.0df6f194.css.map": "/parkingkit-beta/static/css/main.0df6f194.css.map",
-    "main.bc14a05c.js.map": "/parkingkit-beta/static/js/main.bc14a05c.js.map",
+    "main.3cd1ea2d.css.map": "/parkingkit-beta/static/css/main.3cd1ea2d.css.map",
+    "main.af0c5be5.js.map": "/parkingkit-beta/static/js/main.af0c5be5.js.map",
     "787.59a99761.chunk.js.map": "/parkingkit-beta/static/js/787.59a99761.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0df6f194.css",
-    "static/js/main.bc14a05c.js"
+    "static/css/main.3cd1ea2d.css",
+    "static/js/main.af0c5be5.js"
   ]
 }
