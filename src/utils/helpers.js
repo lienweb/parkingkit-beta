@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL =  'https://tcgbusfs.blob.core.windows.net/blobtcmsv';
+// const BASE_URL =  'https://tcgbusfs.blob.core.windows.net/blobtcmsv';
 
 const axiosInstance = axios.create({
   // baseURL: BASE_URL,
