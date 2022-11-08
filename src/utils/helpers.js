@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { BASE_URL } from '../../public';
+const BASE_URL =  'https://tcgbusfs.blob.core.windows.net/blobtcmsv';
 
 const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  // baseURL: BASE_URL,
   timeout: 1000,
   // headers: { 'X-Custom-Header': 'foobar' }
 })
