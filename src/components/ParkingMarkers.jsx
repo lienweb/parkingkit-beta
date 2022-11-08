@@ -1,23 +1,17 @@
 import { useState, useEffect } from 'react'
-// import { useMap } from 'react-leaflet'
-// import L from 'leaflet'
-import 'leaflet.markercluster'
+import "leaflet.markercluster/dist/MarkerCluster.css";
+import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+import MarkerClusterGroup from './MarkerClusterGroup'
 import { apiHelper } from '../utils/helpers'
 import ParkingMarker from './ParkingMarker'
 import proj4 from 'proj4'
+
 
 // pass api info into marker
 function ParkingMarkers() {
   // const map = useMap()
   const [coordinates, setCoordinates] = useState([])
   const [availability, setAvailability] = useState([])
-  // const [info, setInfo] = useState([])
-  // const markerIcon = new L.Icon({
-  //   iconUrl: require('../assets/marker.png'),
-  //   iconSize: [24, 36],
-  //   iconAnchor: [12, 36],
-  //   popupAnchor: [0, -46]
-  // })
 
   const fetchInfo = async () => {
     try {
@@ -101,12 +95,13 @@ function ParkingMarkers() {
   })
 
   // data process
-  const infoArr = coordArr.map((coord)=>{
-    const avail = availability.find(item=> item.id === coord.id)
+  const infoArr = coordArr.map((coord) => {
+    const avail = availability.find(item => item.id === coord.id)
+
     return {
       id: coord.id,
-      position: { lat: coord.lat, lng: coord.lng},
-      description:{
+      position: { lat: coord.lat, lng: coord.lng },
+      description: {
         ...coord,
         ...avail
       }
@@ -114,19 +109,10 @@ function ParkingMarkers() {
   })
 
   console.log(infoArr)
-  //markers clustering
-  // var markers = L.markerClusterGroup()
-  // infoArr.map((info, i)=>{
-  //   markers.addLayer(<ParkingMarker 
-  //     position={{ lat: info.lat, lng: info.lng }}
-  //     description="" />)
-  // })
-
-  // markers.addLayer(L.marker(getRandomLatLng(map)))
-  // map.addLayer(markers); 
 
   return (
-    <>
+    // <>
+    <MarkerClusterGroup>
       {
         infoArr.map((info) => (
           <ParkingMarker key={info.id}
@@ -134,7 +120,8 @@ function ParkingMarkers() {
             description={info.description} />
         ))
       }
-    </>
+    </MarkerClusterGroup>
+    // </>
   )
 
 }
