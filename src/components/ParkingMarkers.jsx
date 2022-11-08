@@ -96,7 +96,16 @@ function ParkingMarkers() {
 
   // data process
   const infoArr = coordArr.map((coord) => {
-    const avail = availability.find(item => item.id === coord.id)
+    let avail = availability.find(item => item.id === coord.id)
+
+    if (avail === undefined) {
+      avail = {
+        id: coord.id,
+        availablebus: 0,
+        availablecar: 0,
+        availablemotor: 0
+      }
+    }
 
     return {
       id: coord.id,

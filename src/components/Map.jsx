@@ -28,7 +28,6 @@ export default function Map() {
         zoom={zoomLevel}
         scrollWheelZoom={true}
         zoomControl={false}
-        maxZoom="19"
         className="map__container" >
         <TileLayer
           attribution='&copy; <a href="https://www. openstreetmap.org/copyright">OpenStreetMap Contributors</ a>'
