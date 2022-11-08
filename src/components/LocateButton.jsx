@@ -21,8 +21,7 @@ function LocateButton({ center }) {
       radius,
       color: '#136AEC',
       stroke: false,
-      opacity: 0.15,
-      
+      opacity: 0.05
     })
     currentRadius.addTo(map);
   }

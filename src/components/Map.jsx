@@ -12,7 +12,7 @@ export default function Map() {
   const [center, setCenter] = useState({
     lat: 25.026312001265776, lng: 121.5435894427204
   })
-  const [zoomLevel, setZoomLevel] = useState(12)
+  const [zoomLevel, setZoomLevel] = useState(15)
   const markerIcon = new L.Icon({
     iconUrl: require('../assets/marker.png'),
     iconSize: [24, 36],
