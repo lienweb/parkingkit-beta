@@ -108,7 +108,7 @@ function ParkingMarkers() {
     }
   })
 
-  console.log(infoArr)
+  // console.log(infoArr)
 
   return (
     // <>
