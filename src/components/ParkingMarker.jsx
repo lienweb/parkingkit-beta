@@ -16,15 +16,16 @@ function ParkingMarker({ position, description }) {
       <Popup>
         <Container fluid className="popup__container">
           <div className="d-flex justify-content-between align-items-center">
-            <h5>剩餘20/總共30</h5>
+            <h5>剩餘{description.availablecar ? description.availablecar : 0}
+            /總共{description.totalCar}</h5>
             <Badge bg="secondary">營業中</Badge>
           </div>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <h6>xx停車場</h6>
+              <h6>{description.name}</h6>
               <h6>$ 60</h6>
             </div>
-            <Link to="/#" className='btn btn-secondary text-white'>導航</Link>
+            <Link to="/" className='btn btn-secondary text-white'>詳細資訊</Link>
           </div>
         </Container>
       </Popup>

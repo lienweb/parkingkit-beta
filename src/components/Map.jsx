@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../stylesheets/stylesheet.css'
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
@@ -13,7 +12,7 @@ export default function Map() {
   const [center, setCenter] = useState({
     lat: 25.026312001265776, lng: 121.5435894427204
   })
-  const [zoomLevel, setZoomLevel] = useState(12)
+  const [zoomLevel, setZoomLevel] = useState(15)
   const markerIcon = new L.Icon({
     iconUrl: require('../assets/marker.png'),
     iconSize: [24, 36],
@@ -29,6 +28,7 @@ export default function Map() {
         zoom={zoomLevel}
         scrollWheelZoom={true}
         zoomControl={false}
+        maxZoom="19"
         className="map__container" >
         <TileLayer
           attribution='&copy; <a href="https://www. openstreetmap.org/copyright">OpenStreetMap Contributors</ a>'
@@ -39,15 +39,10 @@ export default function Map() {
         <LocateButton center={center} />
         <Marker position={[center.lat, center.lng]} icon={markerIcon}>
           <Popup>
-            <b>test</b>
+            <b>當前位置</b>
           </Popup>
         </Marker>
         <ParkingMarkers />
-        {/* <Marker position={[25.03648987, 121.5621068]} icon={markerIcon}>
-          <Popup>
-            <b>府前廣場地下停車場</b>
-          </Popup>
-        </Marker> */}
       </MapContainer>
     </>
   )

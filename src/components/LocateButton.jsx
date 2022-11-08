@@ -21,14 +21,11 @@ function LocateButton({ center }) {
       radius,
       color: '#136AEC',
       stroke: false,
-      opacity: 0.15,
-      
+      opacity: 0.05
     })
     currentRadius.addTo(map);
-    // console.log('handleLocationFound')
   }
   function handleLocationNotFound() {
-    // console.log(`to default location:[${center.latlng}]`)
     window.alert('無法定位，定位為預設地點')
     map.flyTo(center)
   }
@@ -39,8 +36,7 @@ function LocateButton({ center }) {
       maxZoom: 18,
       enableHighAccuracy: true,
       timeout: 10000
-    }).on("locationfound", handleLocationFound);
-    // console.log('handleOnFindLocation')
+    }).on("locationfound", handleLocationFound)
   }
 
   useEffect(() => {
@@ -60,14 +56,12 @@ function LocateButton({ center }) {
     buttonControl.addTo(map)
 
     return () => {
-      // console.log('cleanup...')
       //map.remove(buttonControl) //表示destroy map but it's created by useContext, 不需cleanup
       map.on('locationerror', handleLocationNotFound)
       buttonControl.remove() //should cleanup control otherwise re-render 
     }
   }, [])
 
-  // console.log(`painting ui.....:position[${position}]`)
   return position === null ? null
     : (
       <Marker position={position} icon={circleIcon}>
