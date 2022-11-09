@@ -10,6 +10,7 @@ function ParkingMarker({ position, description }) {
     iconAnchor: [12, 36], //align when zoom in out
     popupAnchor: [0, -46]
   })
+// console.log(description)
 
   return (
     <Marker position={[position.lat, position.lng]} icon={markerIcon}>
@@ -23,7 +24,7 @@ function ParkingMarker({ position, description }) {
           <div className="d-flex justify-content-between align-items-center">
             <div>
               <h6>{description.name}</h6>
-              <h6>$ 60</h6>
+              <h6>{(Object.keys(description.fareInfo).length === 0) ? '$ N/A' : `$ ${description.fareInfo.WorkingDay[0].Fare}`}</h6>
             </div>
             <Link to={`/parking-lot/${description.id}`}
             className='btn btn-secondary text-white'

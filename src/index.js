@@ -18,7 +18,8 @@ import LoginLine from './components/LoginLine';
 import LoginGoogle from './components/LoginGoogle';
 import Map from './components/Map'
 import MapDemo from './components/MapDemo'
-import CurrentPos from './components/CurrentPos';
+// import CurrentPos from './components/CurrentPos';
+import ParkingLotDetail from './components/ParkingLotDetail';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -66,9 +67,13 @@ const router = createBrowserRouter([
     path: "map/demo",
     element: <MapDemo />,
   },
+  // {
+  //   path: "map/demo/current-position",
+  //   element: <CurrentPos />,
+  // },
   {
-    path: "map/demo/current-position",
-    element: <CurrentPos />,
+    path: "parking-lot/:id",
+    element: <ParkingLotDetail />,
   },
 ], 
 {
