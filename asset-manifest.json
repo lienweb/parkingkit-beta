@@ -1,16 +1,28 @@
 {
   "files": {
-    "main.css": "/parkingkit-beta/static/css/main.3cd1ea2d.css",
-    "main.js": "/parkingkit-beta/static/js/main.adae35dd.js",
+    "main.css": "/parkingkit-beta/static/css/main.fdd5c62a.css",
+    "main.js": "/parkingkit-beta/static/js/main.0ef8aee3.js",
     "static/js/787.59a99761.chunk.js": "/parkingkit-beta/static/js/787.59a99761.chunk.js",
+    "static/media/parking-lot-example.jpeg": "/parkingkit-beta/static/media/parking-lot-example.9bf8b878213e0ba61a07.jpeg",
+    "static/media/parking-lot-detail-page.svg": "/parkingkit-beta/static/media/parking-lot-detail-page.59849be1f489edcda0e650a68ff380c2.svg",
     "static/media/logo.svg": "/parkingkit-beta/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/parkingkit-beta/index.html",
-    "main.3cd1ea2d.css.map": "/parkingkit-beta/static/css/main.3cd1ea2d.css.map",
-    "main.adae35dd.js.map": "/parkingkit-beta/static/js/main.adae35dd.js.map",
+    "static/media/icon-info.svg": "/parkingkit-beta/static/media/icon-info.387faf68f701656b69f5d79ffc6fb2a3.svg",
+    "static/media/icon-money.svg": "/parkingkit-beta/static/media/icon-money.b8b2604d8da4b90e1b4991aa01c8cd35.svg",
+    "static/media/icon-tel.svg": "/parkingkit-beta/static/media/icon-tel.02af061e66783ca2006ed508969a4506.svg",
+    "static/media/icon-location.svg": "/parkingkit-beta/static/media/icon-location.2f059afe05723edb3a730cdeb23c04e4.svg",
+    "static/media/icon-building.svg": "/parkingkit-beta/static/media/icon-building.49ee4d5c86d74de5d2835a5beda583c2.svg",
+    "static/media/icon-copy.svg": "/parkingkit-beta/static/media/icon-copy.f3047d044b7175ad28b96abed2568cdb.svg",
+    "static/media/icon-chat.svg": "/parkingkit-beta/static/media/icon-chat.a2b8b2e77a9a399f23d2fe24f7482f8f.svg",
+    "static/media/icon-bookmark.svg": "/parkingkit-beta/static/media/icon-bookmark.97451ca4b471e54030d9f4f981705767.svg",
+    "static/media/icon-navigate.svg": "/parkingkit-beta/static/media/icon-navigate.d162b850477225c2a7045f23c33d771a.svg",
+    "static/media/icon-arrow-back.svg": "/parkingkit-beta/static/media/icon-arrow-back.9933390d8fe945a2bdb24e5c10b66aa2.svg",
+    "main.fdd5c62a.css.map": "/parkingkit-beta/static/css/main.fdd5c62a.css.map",
+    "main.0ef8aee3.js.map": "/parkingkit-beta/static/js/main.0ef8aee3.js.map",
     "787.59a99761.chunk.js.map": "/parkingkit-beta/static/js/787.59a99761.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cd1ea2d.css",
-    "static/js/main.adae35dd.js"
+    "static/css/main.fdd5c62a.css",
+    "static/js/main.0ef8aee3.js"
   ]
 }
